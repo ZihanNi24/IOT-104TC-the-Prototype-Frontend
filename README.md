@@ -1,48 +1,55 @@
-# MediNest
+# MediNest Frontend Prototype
 
-Exported from Whacka — this is the **complete frontend source code** for your app.
+This folder contains the exported frontend source code for **MediNest**, the application-layer prototype designed for the **ESP32 Smart Medication Reminder and Incentive System**.
 
-## What's in here
+This frontend is part of the IOT104TC coursework project. Its purpose is to demonstrate how the ESP32-based smart medication reminder prototype could be connected to a user-facing application layer. The app prototype focuses on user flow, UI/UX structure, Patient Mode, Caregiver Mode, prescription review logic, and caregiver monitoring concepts.
 
-- `src/App.jsx` and your components — your application code.
-- `src/lib/*` — the Whacka client SDK (data, AI, audio, storage, auth, payments, push, …).
-- `index.html`, `vite.config.js`, `package.json`, Tailwind/PostCSS config — the build setup.
+## Project Context
 
-## How it runs (please read)
+The full coursework project is an IoT medication reminder prototype based on ESP32. The hardware side includes timed reminders, pill quantity display, physical lid control, medication confirmation, reward feedback, and MQTT event reporting.
 
-This is the **frontend only**. Your app's data, AI, file storage, auth, payments and
-push features are powered by **Whacka's hosted backend**. The code in `src/lib/` makes
-authenticated calls to:
+This frontend prototype represents the **application layer** of the IoT system. It shows how device events and medication information could be presented to patients and caregivers through a mobile interface.
 
-    https://whacka.app/api/app/a60d8d35-752d-4c3a-b5f8-8003ea1a6c96/...
+## What's Included
 
-It is **not a standalone server** — it needs the Whacka backend to function.
+This export includes:
 
-## Running locally (development)
+- `src/App.jsx` and related components  
+  The main application UI and interaction logic.
 
-Create a `.env.local` in this folder:
+- `src/lib/*`  
+  Whacka client SDK files used by the exported frontend.
 
-```
-VITE_PROJECT_ID=a60d8d35-752d-4c3a-b5f8-8003ea1a6c96
+- `index.html`  
+  Main HTML entry file.
+
+- `vite.config.js`  
+  Vite build configuration.
+
+- `package.json`  
+  Project dependencies and development scripts.
+
+- Tailwind / PostCSS configuration  
+  Styling and frontend build setup.
+
+## Important Note
+
+This is a **frontend prototype only**.
+
+It is not a standalone full-stack application and it does not include an independent backend server. Some features, including data storage, AI functions, file storage, authentication, payments, and push-related services, depend on Whacka's hosted backend.
+
+The exported frontend code makes authenticated calls to the Whacka backend associated with this project.
+
+Because of this, the code should be understood as evidence of the UI/UX structure and application-layer logic, rather than as a completely independent deployable software system.
+
+## Running Locally for Development
+
+To run the frontend locally, create a `.env.local` file in this folder.
+
+Example:
+
+```env
+VITE_PROJECT_ID=<project_id>
 VITE_API_BASE=https://whacka.app
-VITE_SUPABASE_URL=<your Supabase URL>
-VITE_SUPABASE_ANON_KEY=<your Supabase anon key>
-```
-
-Then:
-
-```bash
-npm install
-npm run dev
-```
-
-`VITE_PROJECT_ID` and `VITE_API_BASE` above are yours and ready to use. The two
-`SUPABASE` values are public keys already embedded in your published app. With these
-set, the app runs against your **live** Whacka backend and uses your Whacka account
-and credits.
-
-## Ownership
-
-Your application code is yours. The Whacka client libraries in `src/lib/` are provided
-to run your app on the Whacka platform. Running entirely without Whacka's backend would
-require replacing those backend services yourself, which this export does not include.
+VITE_SUPABASE_URL=<your_supabase_url>
+VITE_SUPABASE_ANON_KEY=<your_supabase_anon_key>
